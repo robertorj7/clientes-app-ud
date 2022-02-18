@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { Usuario } from './usuario';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +11,15 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   username!: string;
-  password!: string;
-  loginError!: boolean;
+  password!: string;  
   cadastrando!: boolean;
+  mensagemSucesso!: string;
+  errors: String[] = [];  
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   onSubmit() {
     this.router.navigate(['/home']);
@@ -26,5 +32,26 @@ export class LoginComponent {
 
   cancelaCadastro() {
     this.cadastrando = false;
+  }
+
+  cadastrar() {
+    const usuario: Usuario = new Usuario();
+    usuario.username = this.username;
+    usuario.password = this.password;
+    this.authService
+      .salvar(usuario)
+      .subscribe({
+        next: (response) => {
+          this.mensagemSucesso = "Cadastro realizado com sucesso! Efetue o login.";
+          this.cadastrando = false;
+          this.username = '';
+          this.password = '';
+          this.errors = [];
+        },
+        error: (errorResponse) => {  
+          this.mensagemSucesso = '';
+          this.errors = errorResponse.error.errors;          
+        }
+      })
   }
 }
