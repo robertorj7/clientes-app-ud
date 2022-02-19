@@ -6,7 +6,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: LayoutComponent, children: [
+  { path: '', component: LayoutComponent, canActivate: [AuthGuard], children: [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard] }
   ]},
   { path: 'login', component: LoginComponent }  
