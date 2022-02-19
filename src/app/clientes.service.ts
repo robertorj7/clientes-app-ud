@@ -13,11 +13,11 @@ export class ClientesService {
 
   constructor(private http: HttpClient) {}
 
-  salvar(cliente: Cliente): Observable<Cliente> {
+  salvar(cliente: Cliente): Observable<Cliente> {    
     return this.http.post<Cliente>(this.apiURL, cliente);
   }
 
-  getClientes() : Observable<Cliente[]> {
+  getClientes() : Observable<Cliente[]> {  
     return this.http.get<Cliente[]>(this.apiURL);
   }
 
