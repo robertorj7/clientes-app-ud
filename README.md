@@ -1,27 +1,44 @@
-# ClientesApp
+# clientes-app-ud
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+O **clientes-app-ud** é uma aplicação web que permite o cadastro, visualização, edição e exclusão de clientes, além de consultas e outras funcionalidades relacionadas à gestão de clientes.s
 
-## Development server
+## Sobre o Projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- **Frontend:** Este repositório, desenvolvido com tecnologias modernas de frontend.
+- **Backend:** Todas as regras de negócio, persistência de dados e APIs REST estão implementadas no repositório [`robertorj7/clientes-api-ud`](https://github.com/robertorj7/clientes-api-ud).
 
-## Code scaffolding
+## Como Executar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clone este repositório:**
+   ```bash
+   git clone https://github.com/robertorj7/clientes-app-ud.git
+   cd clientes-app-ud
+   ```
 
-## Build
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Configure o ambiente:**
+   - Certifique-se de que o backend (`clientes-api-ud`) está rodando e acessível.
+   - Atualize as variáveis de ambiente (por exemplo, `REACT_APP_API_URL`) para apontar para o endereço correto do backend.
 
-## Running unit tests
+4. **Execute a aplicação:**
+   ```bash
+   npm start
+   # ou
+   yarn start
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+5. **Acesse no navegador:**
+   ```
+   http://localhost:3000
+   ```
 
-## Running end-to-end tests
+## Estrutura dos Repositórios
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Frontend:** [robertorj7/clientes-app-ud](https://github.com/robertorj7/clientes-app-ud) (este repositório)
+- **Backend:** [robertorj7/clientes-api-ud](https://github.com/robertorj7/clientes-api-ud)
